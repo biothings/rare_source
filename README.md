@@ -1,2 +1,3 @@
-# rare_source
-API Plugin for RARe-SOURCE
+# Data Plugin for RARe-SOURCE
+
+This repo is a data plugin for [RARe-SOURCE](https://raresource.nih.gov/).
