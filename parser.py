@@ -59,7 +59,10 @@ def construct_rare_disease_entity(rare_disease_row: pd.Series) -> Dict:
 
     # The following columns may contain <NA> values, so pd.isna() checks are necessary
     if not pd.isna(rare_disease_row["Disease_Aliases"]):
-        entity["alias"] = rare_disease_row["Disease_Aliases"].split("//")
+        aliases = rare_disease_row["Disease_Aliases"].split("//")
+        if aliases[-1] == "":
+            aliases = aliases[0:-1]  # remove the last empty alias, because Disease_Aliases may end with double slashes
+        entity["alias"] = aliases
 
     if not pd.isna(rare_disease_row["OMIM"]):
         entity["omim"] = rare_disease_row["OMIM"]
