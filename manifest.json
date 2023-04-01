@@ -1,0 +1,19 @@
+{
+    "version": "0.1",
+    "__metadata__" : {
+        "url" : "https://raresource.nih.gov/"
+    },
+    "dumper" : {
+        "data_url" : [
+            "http://localhost:8080/dataupload/mysrc/RARe-SOURCE/RARe-SOURCE-Browse-Rare-Diseases-03-21-2023.csv",
+            "http://localhost:8080/dataupload/mysrc/RARe-SOURCE/RARe-SOURCE-Browse-Genes-03-21-2023.csv"
+        ],
+        "uncompress" : false,
+        "release" : "version:get_release"
+    },
+    "uploader" : {
+        "parser" : "parser:load_data",
+        "on_duplicates" : "error",
+        "mapping": "mapping:rare_source_mapping"
+    }
+}
