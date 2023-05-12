@@ -1,6 +1,7 @@
 import os
-import pandas as pd
+from copy import deepcopy
 from typing import Dict, Union
+import pandas as pd
 
 
 def read_rare_diseases(filepath) -> pd.DataFrame:
@@ -160,6 +161,7 @@ def construct_doc(gene_entity: Dict, gene_disease_mapping: Dict, rare_disease_re
     if not disease_entities:
         return None
 
+    disease_entities = deepcopy(disease_entities)
     for disease_entity in disease_entities:
         disease_entity["cooccurrence_url"] = f"https://raresource.nih.gov/literature/cooccurrence/{gene_entity['symbol']}/{disease_entity['gard']}"
 
