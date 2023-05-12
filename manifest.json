@@ -3,6 +3,7 @@
     "__metadata__" : {
         "url" : "https://raresource.nih.gov/"
     },
+    "biothing_type": "gene",
     "dumper" : {
         "data_url" : [
             "http://localhost:8080/dataupload/mysrc/RARe-SOURCE/RARe-SOURCE-Browse-Rare-Diseases-03-21-2023.csv",
